@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ImagePro Studio</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>ImagePro Studio</h1>
+    <p>Image Processing using OpenCV</p>
+  </header>
+
+  <main class="container">
+
+    <!-- STATUS BAR -->
+    <div id="status" class="status"></div>
+
+    <!-- 1. IMAGE SOURCE -->
+    <section class="card">
+      <h2>1 &middot; Image Source</h2>
+      <div class="source-tabs">
+        <button id="tabUpload" class="tab-btn active" type="button">Upload from PC</button>
+        <button id="tabCamera" class="tab-btn" type="button">Camera</button>
+      </div>
+
+      <!-- Upload panel -->
+      <div id="uploadPanel" class="source-panel">
+        <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.bmp" hidden />
+        <button id="btnUpload" class="btn btn-primary" type="button">Upload Image</button>
+        <span class="hint">JPG, JPEG, PNG or BMP</span>
+      </div>
+
+      <!-- Camera panel -->
+      <div id="cameraPanel" class="source-panel hidden">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="canvas" hidden></canvas>
+        <div class="btn-row">
+          <button id="btnStartCamera" class="btn btn-primary" type="button">Start Camera</button>
+          <button id="btnCapture" class="btn btn-primary" type="button" disabled>Capture Image</button>
+          <button id="btnStopCamera" class="btn btn-secondary" type="button" disabled>Stop Camera</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2/3. ORIGINAL / PROCESSED -->
+    <section class="card">
+      <h2>Original &amp; Processed Image</h2>
+      <div class="image-grid">
+        <div class="image-col">
+          <h3>Original Image</h3>
+          <div class="image-box" id="originalBox">
+            <span class="placeholder">No image selected</span>
+          </div>
+        </div>
+        <div class="image-col">
+          <h3>Processed Result</h3>
+          <div class="image-box" id="processedBox">
+            <span class="placeholder">No processed image yet</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4/5. OPERATIONS + CONTROLS -->
+    <section class="card">
+      <h2>Processing Operations</h2>
+
+      <label for="operationSelect">Choose an operation</label>
+      <select id="operationSelect">
+        <option value="load_display">1. Load and Display Image</option>
+        <option value="grayscale">2. Convert to Grayscale</option>
+        <option value="binary">3. Convert to Binary</option>
+        <option value="format_convert">4. Format Conversion (JPG/PNG/BMP)</option>
+        <option value="rgb_to_gray">5. RGB to Grayscale</option>
+        <option value="rgb_to_hsv">6. RGB to HSV</option>
+        <option value="histogram_equalization">7. Histogram Equalization</option>
+        <option value="brightness_contrast">8. Brightness &amp; Contrast</option>
+        <option value="average_filter">9. Average Filter</option>
+        <option value="gaussian_filter">10. Gaussian Filter</option>
+        <option value="laplacian_sharpen">11. Laplacian Sharpening</option>
+        <option value="sobel_edge">12. Sobel Edge Detection</option>
+        <option value="canny_edge">13. Canny Edge Detection</option>
+      </select>
+
+      <!-- Dynamic controls -->
+      <div id="controls" class="controls">
+
+        <div class="control-row" data-for="binary">
+          <label>Threshold: <span id="thresholdVal">127</span></label>
+          <input type="range" id="thresholdRange" min="0" max="255" value="127" />
+        </div>
+
+        <div class="control-row" data-for="brightness_contrast">
+          <label>Brightness: <span id="brightnessVal">0</span></label>
+          <input type="range" id="brightnessRange" min="-100" max="100" value="0" />
+          <label>Contrast: <span id="contrastVal">1.0</span></label>
+          <input type="range" id="contrastRange" min="0" max="30" value="10" />
+        </div>
+
+        <div class="control-row" data-for="average_filter,gaussian_filter">
+          <label>Kernel Size: <span id="ksizeVal">5</span></label>
+          <input type="range" id="ksizeRange" min="1" max="25" step="2" value="5" />
+        </div>
+
+        <div class="control-row" data-for="sobel_edge">
+          <label>Direction</label>
+          <select id="sobelDirection">
+            <option value="both">Both (X &amp; Y)</option>
+            <option value="x">X only</option>
+            <option value="y">Y only</option>
+          </select>
+        </div>
+
+        <div class="control-row" data-for="canny_edge">
+          <label>Lower Threshold: <span id="cannyLowVal">100</span></label>
+          <input type="range" id="cannyLowRange" min="0" max="500" value="100" />
+          <label>Upper Threshold: <span id="cannyHighVal">200</span></label>
+          <input type="range" id="cannyHighRange" min="0" max="500" value="200" />
+        </div>
+
+        <div class="control-row" data-for="format_convert">
+          <label>Target Format</label>
+          <select id="formatSelect">
+            <option value="jpg">JPG</option>
+            <option value="png">PNG</option>
+            <option value="bmp">BMP</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="btn-row">
+        <button id="btnProcess" class="btn btn-primary" type="button" disabled>Process Image</button>
+        <button id="btnReset" class="btn btn-secondary" type="button">Reset</button>
+      </div>
+    </section>
+
+    <!-- 7. SAVE / DOWNLOAD -->
+    <section class="card">
+      <h2>Save / Download Result</h2>
+      <div class="btn-row">
+        <button id="btnDownloadJpg" class="btn btn-download" type="button" disabled>Download JPG</button>
+        <button id="btnDownloadPng" class="btn btn-download" type="button" disabled>Download PNG</button>
+        <button id="btnDownloadBmp" class="btn btn-download" type="button" disabled>Download BMP</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>ImagePro Studio &mdash; Diploma Image Processing Project (Python + Flask + OpenCV)</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
