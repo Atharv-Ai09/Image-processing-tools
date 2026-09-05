@@ -130,7 +130,10 @@ Image-processing-tools/
         ┌─────────────────┐
         │ Download Image  │
         └─────────────────┘
-        🚀 Installation and Setup
+
+
+🚀 Installation and Setup
+
 1️⃣ Clone the Repository
 
 Open PowerShell or Command Prompt and run:
@@ -140,6 +143,7 @@ git clone https://github.com/Atharv-Ai09/Image-processing-tools.git
 Then enter the project folder:
 
 cd Image-processing-tools
+
 2️⃣ Create a Virtual Environment
 
 For Windows:
@@ -153,6 +157,7 @@ venv\Scripts\activate
 After activation, you should see something similar to:
 
 (venv) PS C:\...\Image-processing-tools>
+
 3️⃣ Install Required Packages
 
 Run:
@@ -162,6 +167,7 @@ pip install -r requirements.txt
 If requirements.txt is not available, install the main packages manually:
 
 pip install flask opencv-python numpy
+
 4️⃣ Run the Application
 
 Run:
@@ -175,6 +181,7 @@ Running on http://127.0.0.1:5000
 Open your browser and visit:
 
 http://127.0.0.1:5000
+
 📷 Camera Feature
 
 ImagePro Studio supports image capture through the browser camera.
@@ -193,6 +200,7 @@ View and download the result
 Note: Camera access requires browser permission.
 
 🖼️ Example Operations
+
 Grayscale Conversion
 
 Converts a color image into a grayscale image.
