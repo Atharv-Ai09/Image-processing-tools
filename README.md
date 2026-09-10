@@ -1,4 +1,4 @@
-<h1 align="center">🖼️ ImagePro Studio</h1>
+<h1 align="center"> ImagePro Studio</h1>
 
 <p align="center">
   <b>Image Processing Tools using OpenCV</b>
