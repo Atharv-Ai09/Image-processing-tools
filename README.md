@@ -1,359 +1,603 @@
-# 🖼️ ImagePro Studio – Image Processing Tools
+<h1 align="center">🖼️ ImagePro Studio</h1>
 
 <p align="center">
-  <b>A Simple Web-Based Image Processing Application using Python, Flask & OpenCV</b>
+  <b>Image Processing Tools using OpenCV</b>
 </p>
 
 <p align="center">
-  Upload images, capture images using your camera, apply image-processing operations, and download the processed result.
+  A web-based Image Processing application developed using Python, Flask and OpenCV.
 </p>
 
----
+<p align="center">
+  <b>Final Year Project | GTTC Belagavi</b>
+</p>
 
-## 📌 About the Project
+<hr>
 
-**ImagePro Studio** is a web-based image processing application developed using **Python, Flask, OpenCV, NumPy, HTML, CSS, and JavaScript**.
+<h2>📌 Project Overview</h2>
 
-The application provides a simple and interactive interface for performing common image-processing operations. Users can upload an image from their computer or capture an image using their browser camera, select an operation, process the image, and download the result.
+<p>
+  <b>ImagePro Studio</b> is a web-based Image Processing application developed
+  as a <b>Final Year Project</b> by students of the Artificial Intelligence &
+  Machine Learning department at GTTC Belagavi.
+</p>
 
-This project is designed for **educational purposes** and demonstrates fundamental concepts of digital image processing using OpenCV.
+<p>
+  The main purpose of this project is to provide a simple, interactive and
+  user-friendly platform for performing fundamental digital image processing
+  operations using <b>OpenCV</b>.
+</p>
 
----
+<p>
+  The application allows users to upload an image from their computer or
+  capture an image using a web camera. After selecting an image, users can
+  apply different image processing techniques and view the processed result
+  directly in the browser.
+</p>
 
-## ✨ Features
+<hr>
 
-- 📤 Upload images from your computer
-- 📷 Capture images using the browser camera
-- 🖼️ Preview the original image
-- ⚙️ Apply different image-processing operations
-- 🎚️ Adjust processing parameters
-- 👀 View the processed image
-- 💾 Download processed images
-- 🔄 Reset and process another image
-- 📱 Responsive web interface
-- 🐍 Python + Flask backend
-- 🔬 OpenCV-based image processing
+<h2>🎯 Objectives</h2>
 
----
+<ul>
+  <li>To understand the fundamentals of digital image processing.</li>
+  <li>To implement image processing techniques using OpenCV.</li>
+  <li>To develop a simple and user-friendly web-based application.</li>
+  <li>To support image input through upload and camera capture.</li>
+  <li>To perform image enhancement and filtering operations.</li>
+  <li>To implement different edge detection techniques.</li>
+  <li>To display the processed image in the browser.</li>
+  <li>To allow users to download processed images.</li>
+  <li>To gain practical knowledge of Python, Flask, OpenCV and NumPy.</li>
+</ul>
 
-## 🛠️ Image Processing Operations
+<hr>
 
-The application currently supports the following operations:
+<h2>✨ Key Features</h2>
 
-| No. | Operation |
-|---:|---|
-| 1 | Load and Display Image |
-| 2 | Convert Image to Grayscale |
-| 3 | Convert Image to Binary |
-| 4 | Convert Image Between JPG, PNG and BMP |
-| 5 | RGB to Grayscale |
-| 6 | RGB to HSV |
-| 7 | Histogram Equalization |
-| 8 | Brightness and Contrast Adjustment |
-| 9 | Average Filter |
-| 10 | Gaussian Filter |
-| 11 | Laplacian Sharpening |
-| 12 | Sobel Edge Detection |
-| 13 | Canny Edge Detection |
+<ul>
+  <li>📤 Upload images from a computer</li>
+  <li>📷 Capture images using a web camera</li>
+  <li>🖼️ Original image preview</li>
+  <li>⚫ Grayscale conversion</li>
+  <li>◼️ Binary thresholding</li>
+  <li>🌈 RGB to HSV conversion</li>
+  <li>📊 Histogram equalization</li>
+  <li>☀️ Brightness adjustment</li>
+  <li>🎚️ Contrast adjustment</li>
+  <li>🔲 Average filtering</li>
+  <li>🌫️ Gaussian filtering</li>
+  <li>🔍 Laplacian sharpening</li>
+  <li>📐 Sobel edge detection</li>
+  <li>✏️ Canny edge detection</li>
+  <li>💾 Download processed images</li>
+  <li>🔄 Reset and process another image</li>
+  <li>🖼️ Support for JPG, JPEG, PNG and BMP images</li>
+</ul>
 
----
+<hr>
 
-## 💻 Technologies Used
+<h2>🛠️ Technologies Used</h2>
 
-### Backend
-- Python
-- Flask
-- OpenCV
-- NumPy
+<table border="1" cellpadding="10" cellspacing="0">
+  <tr>
+    <th>Technology</th>
+    <th>Purpose</th>
+  </tr>
 
-### Frontend
-- HTML5
-- CSS3
-- JavaScript
+  <tr>
+    <td><b>Python</b></td>
+    <td>Main programming language</td>
+  </tr>
 
-### Image Processing
-- OpenCV
-- NumPy
+  <tr>
+    <td><b>Flask</b></td>
+    <td>Backend web framework</td>
+  </tr>
 
----
+  <tr>
+    <td><b>OpenCV</b></td>
+    <td>Image processing operations</td>
+  </tr>
 
-## 📂 Project Structure
+  <tr>
+    <td><b>NumPy</b></td>
+    <td>Numerical and image array processing</td>
+  </tr>
 
-```text
-Image-processing-tools/
+  <tr>
+    <td><b>HTML5</b></td>
+    <td>Web page structure</td>
+  </tr>
+
+  <tr>
+    <td><b>CSS3</b></td>
+    <td>Web page styling</td>
+  </tr>
+
+  <tr>
+    <td><b>JavaScript</b></td>
+    <td>Frontend interaction and camera functionality</td>
+  </tr>
+
+  <tr>
+    <td><b>Web Camera API</b></td>
+    <td>Capturing images through the browser</td>
+  </tr>
+
+  <tr>
+    <td><b>Jinja2</b></td>
+    <td>Flask HTML template rendering</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>🏗️ Architecture Design</h2>
+
+<pre>
+                       ┌─────────────────────┐
+                       │        USER         │
+                       └──────────┬──────────┘
+                                  │
+                         Upload / Camera
+                                  │
+                                  ▼
+                       ┌─────────────────────┐
+                       │    FRONTEND LAYER   │
+                       │                     │
+                       │ HTML + CSS + JS     │
+                       │                     │
+                       │ • Upload Image      │
+                       │ • Camera Capture    │
+                       │ • Select Operation  │
+                       │ • Preview Image     │
+                       └──────────┬──────────┘
+                                  │
+                              HTTP Request
+                                  │
+                                  ▼
+                       ┌─────────────────────┐
+                       │     BACKEND LAYER   │
+                       │                     │
+                       │ Python + Flask      │
+                       │                     │
+                       │ • File Handling     │
+                       │ • Routes            │
+                       │ • Request Handling  │
+                       └──────────┬──────────┘
+                                  │
+                                  ▼
+                       ┌─────────────────────┐
+                       │ IMAGE PROCESSING    │
+                       │       LAYER         │
+                       │                     │
+                       │ OpenCV + NumPy      │
+                       │                     │
+                       │ • Grayscale         │
+                       │ • Binary            │
+                       │ • RGB → HSV         │
+                       │ • Histogram         │
+                       │ • Filtering         │
+                       │ • Laplacian         │
+                       │ • Sobel             │
+                       │ • Canny             │
+                       └──────────┬──────────┘
+                                  │
+                           Processed Image
+                                  │
+                                  ▼
+                       ┌─────────────────────┐
+                       │     OUTPUT LAYER    │
+                       │                     │
+                       │ • Display Result    │
+                       │ • Download JPG      │
+                       │ • Download PNG      │
+                       │ • Download BMP      │
+                       └─────────────────────┘
+</pre>
+
+<hr>
+
+<h2>📂 Project File Structure</h2>
+
+<pre>
+ImageProStudio_fixed/
 │
 ├── app.py
 ├── requirements.txt
+├── README.md
 │
 ├── templates/
 │   └── index.html
 │
 ├── static/
-│   ├── script.js
-│   └── style.css
+│   ├── style.css
+│   └── script.js
 │
 ├── uploads/
+│   └── Uploaded images
 │
 └── outputs/
+    └── Processed images
+</pre>
 
-🔄 How the Application Works
-              USER
-                │
-                ▼
-        ┌─────────────────┐
-        │  Web Interface  │
-        └────────┬────────┘
-                 │
-        ┌────────┴─────────┐
-        │                  │
-        ▼                  ▼
-   Upload Image       Camera Capture
-        │                  │
-        └────────┬─────────┘
-                 ▼
-        ┌─────────────────┐
-        │  Flask Backend  │
-        └────────┬────────┘
-                 ▼
-        ┌─────────────────┐
-        │ OpenCV + NumPy  │
-        └────────┬────────┘
-                 ▼
-        ┌─────────────────┐
-        │ Processed Image │
-        └────────┬────────┘
-                 ▼
-        ┌─────────────────┐
-        │ Display Result  │
-        └────────┬────────┘
-                 ▼
-        ┌─────────────────┐
-        │ Download Image  │
-        └─────────────────┘
+<h3>📄 File Description</h3>
 
+<table border="1" cellpadding="10" cellspacing="0">
+  <tr>
+    <th>File / Folder</th>
+    <th>Description</th>
+  </tr>
 
-🚀 Installation and Setup
+  <tr>
+    <td><code>app.py</code></td>
+    <td>Main Flask application and backend processing routes.</td>
+  </tr>
 
-1️⃣ Clone the Repository
+  <tr>
+    <td><code>index.html</code></td>
+    <td>Main user interface of the application.</td>
+  </tr>
 
-Open PowerShell or Command Prompt and run:
+  <tr>
+    <td><code>style.css</code></td>
+    <td>Provides styling, layout and visual design.</td>
+  </tr>
 
+  <tr>
+    <td><code>script.js</code></td>
+    <td>Handles frontend interaction, processing requests and camera functionality.</td>
+  </tr>
+
+  <tr>
+    <td><code>requirements.txt</code></td>
+    <td>Contains the required Python packages.</td>
+  </tr>
+
+  <tr>
+    <td><code>uploads/</code></td>
+    <td>Stores uploaded or captured images.</td>
+  </tr>
+
+  <tr>
+    <td><code>outputs/</code></td>
+    <td>Stores processed images generated by the application.</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>⚙️ Image Processing Operations</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <tr>
+    <th>No.</th>
+    <th>Operation</th>
+    <th>Purpose</th>
+  </tr>
+
+  <tr>
+    <td>1</td>
+    <td><b>Grayscale</b></td>
+    <td>Converts a color image into a grayscale image.</td>
+  </tr>
+
+  <tr>
+    <td>2</td>
+    <td><b>Binary Threshold</b></td>
+    <td>Converts an image into black and white using a threshold value.</td>
+  </tr>
+
+  <tr>
+    <td>3</td>
+    <td><b>RGB to HSV</b></td>
+    <td>Converts the image from RGB/BGR color space to HSV.</td>
+  </tr>
+
+  <tr>
+    <td>4</td>
+    <td><b>Histogram Equalization</b></td>
+    <td>Improves the contrast of a grayscale image.</td>
+  </tr>
+
+  <tr>
+    <td>5</td>
+    <td><b>Brightness & Contrast</b></td>
+    <td>Adjusts image brightness and contrast.</td>
+  </tr>
+
+  <tr>
+    <td>6</td>
+    <td><b>Average Filter</b></td>
+    <td>Smooths the image and reduces noise.</td>
+  </tr>
+
+  <tr>
+    <td>7</td>
+    <td><b>Gaussian Filter</b></td>
+    <td>Provides smooth filtering and reduces image noise.</td>
+  </tr>
+
+  <tr>
+    <td>8</td>
+    <td><b>Laplacian</b></td>
+    <td>Highlights edges and fine image details.</td>
+  </tr>
+
+  <tr>
+    <td>9</td>
+    <td><b>Sobel</b></td>
+    <td>Detects horizontal and vertical edges.</td>
+  </tr>
+
+  <tr>
+    <td>10</td>
+    <td><b>Canny</b></td>
+    <td>Detects significant edges in an image.</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>🔄 System Working</h2>
+
+<ol>
+  <li>User opens the ImagePro Studio web application.</li>
+  <li>User uploads an image or captures an image using the camera.</li>
+  <li>The selected image is displayed in the application.</li>
+  <li>User selects the required image processing operation.</li>
+  <li>The request is sent to the Flask backend.</li>
+  <li>Flask receives and processes the request.</li>
+  <li>OpenCV and NumPy perform the selected operation.</li>
+  <li>The processed image is generated and stored in the output folder.</li>
+  <li>The processed result is displayed in the browser.</li>
+  <li>User can download the processed image.</li>
+</ol>
+
+<hr>
+
+<h2>💻 Installation and Setup</h2>
+
+<h3>Prerequisites</h3>
+
+<ul>
+  <li>Python 3.x</li>
+  <li>Web Browser</li>
+  <li>VS Code or PyCharm</li>
+  <li>Web Camera (optional)</li>
+</ul>
+
+<h3>1. Clone the Repository</h3>
+
+<pre>
 git clone https://github.com/Atharv-Ai09/Image-processing-tools.git
-
-Then enter the project folder:
-
 cd Image-processing-tools
+</pre>
 
-2️⃣ Create a Virtual Environment
+<h3>2. Create Virtual Environment</h3>
 
-For Windows:
-
+<pre>
 python -m venv venv
+</pre>
 
-Activate the virtual environment:
+<h3>3. Activate Virtual Environment</h3>
 
+<p><b>Windows PowerShell:</b></p>
+
+<pre>
 venv\Scripts\activate
+</pre>
 
-After activation, you should see something similar to:
+<h3>4. Install Required Packages</h3>
 
-(venv) PS C:\...\Image-processing-tools>
-
-3️⃣ Install Required Packages
-
-Run:
-
+<pre>
 pip install -r requirements.txt
+</pre>
 
-If requirements.txt is not available, install the main packages manually:
+<h3>5. Run the Application</h3>
 
-pip install flask opencv-python numpy
-
-4️⃣ Run the Application
-
-Run:
-
+<pre>
 python app.py
+</pre>
 
-You should see something similar to:
+<h3>6. Open the Application</h3>
 
-Running on http://127.0.0.1:5000
+<p>
+  Open the following address in your web browser:
+</p>
 
-Open your browser and visit:
-
+<pre>
 http://127.0.0.1:5000
+</pre>
 
-📷 Camera Feature
+<hr>
 
-ImagePro Studio supports image capture through the browser camera.
+<h2>📷 Camera Input</h2>
 
-When you select the Camera option:
+<p>
+  ImagePro Studio supports image capture using the browser's camera.
+  The user can allow camera access, capture an image and use the captured
+  image for image processing.
+</p>
 
-Click Start Camera
-Allow camera permission in your browser
-Position the object/image in front of the camera
-Click Capture
-The captured image is sent to the Flask backend
-Select an image-processing operation
-Click Process Image
-View and download the result
+<p>
+  Camera functionality is implemented using the browser's
+  <b>Web Camera API</b> and JavaScript.
+</p>
 
-Note: Camera access requires browser permission.
+<hr>
 
-🖼️ Example Operations
+<h2>💾 Supported Image Formats</h2>
 
-Grayscale Conversion
+<ul>
+  <li>JPG</li>
+  <li>JPEG</li>
+  <li>PNG</li>
+  <li>BMP</li>
+</ul>
 
-Converts a color image into a grayscale image.
+<p>
+  Processed images can also be downloaded in supported formats such as
+  <b>JPG, PNG and BMP</b>.
+</p>
 
-Color Image
-     ↓
-Grayscale Conversion
-     ↓
-Gray Image
-Binary Image
+<hr>
 
-Converts an image into black and white using a threshold value.
+<h2>🔐 Project Limitations</h2>
 
-Grayscale Image
-       ↓
-   Threshold
-       ↓
- Binary Image
-RGB to HSV
+<ul>
+  <li>The application is mainly designed for educational purposes.</li>
+  <li>Processing performance depends on image size and computer hardware.</li>
+  <li>Very large images may require more processing time.</li>
+  <li>The application focuses on fundamental image processing techniques.</li>
+</ul>
 
-Converts an RGB/BGR image into the HSV color space.
+<hr>
 
-HSV represents:
+<h2>🚀 Future Enhancements</h2>
 
-Hue
-Saturation
-Value
-Histogram Equalization
+<ul>
+  <li>Add image resizing and rotation.</li>
+  <li>Add image cropping functionality.</li>
+  <li>Add more advanced filtering techniques.</li>
+  <li>Add batch image processing.</li>
+  <li>Support additional image formats.</li>
+  <li>Improve the user interface and accessibility.</li>
+  <li>Add more image enhancement techniques.</li>
+</ul>
 
-Improves the contrast of an image by redistributing intensity values.
+<hr>
 
-Gaussian Filter
+<h2>🎓 Final Year Project</h2>
 
-Used for image smoothing and noise reduction.
+<p>
+  <b>ImagePro Studio – Image Processing Tools</b> is developed as a
+  <b>Final Year Project</b> to demonstrate the practical implementation
+  of fundamental digital image processing concepts.
+</p>
 
-Laplacian Sharpening
+<p>
+  The project combines programming, image processing and web development
+  technologies to create an interactive and useful application.
+</p>
 
-Enhances details and edges in an image.
+<hr>
 
-Sobel Edge Detection
+<h2>👨‍💻 Project Members</h2>
 
-Detects edges in a selected direction:
+<table border="1" cellpadding="10" cellspacing="0">
+  <tr>
+    <th>Sl. No.</th>
+    <th>Project Member</th>
+    <th>Registration Number</th>
+  </tr>
 
-Horizontal
-Vertical
-Both
-Canny Edge Detection
+  <tr>
+    <td>1</td>
+    <td><b>Atharv Shetty</b></td>
+    <td>8080110</td>
+  </tr>
 
-Detects important edges in an image using the Canny edge detection algorithm.
+  <tr>
+    <td>2</td>
+    <td><b>Adinath Vasulkar</b></td>
+    <td>8080102</td>
+  </tr>
 
-Users can adjust:
+  <tr>
+    <td>3</td>
+    <td><b>Nagaveni Patil</b></td>
+    <td>8080123</td>
+  </tr>
 
-Lower threshold
-Upper threshold
-📥 Supported Image Formats
+  <tr>
+    <td>4</td>
+    <td><b>Aditya Godse</b></td>
+    <td>8080103</td>
+  </tr>
+</table>
 
-The application supports:
+<hr>
 
-JPG
-JPEG
-PNG
-BMP
+<h2>🏫 Academic Information</h2>
 
-Processed images can also be downloaded in:
+<table border="1" cellpadding="10" cellspacing="0">
+  <tr>
+    <th>Details</th>
+    <th>Information</th>
+  </tr>
 
-JPG
-PNG
-BMP
-🎯 Project Objectives
+  <tr>
+    <td><b>Project Title</b></td>
+    <td>ImagePro Studio – Image Processing Tools</td>
+  </tr>
 
-The main objectives of this project are:
+  <tr>
+    <td><b>Project Type</b></td>
+    <td>Final Year Project</td>
+  </tr>
 
-To understand fundamental image-processing concepts.
-To implement image-processing techniques using OpenCV.
-To create a simple web interface for image processing.
-To understand communication between frontend and Flask backend.
-To provide an easy-to-use platform for experimenting with image-processing operations.
-To demonstrate practical applications of Python and OpenCV.
-🎓 Educational Purpose
+  <tr>
+    <td><b>Department</b></td>
+    <td>Artificial Intelligence & Machine Learning</td>
+  </tr>
 
-This project is developed as an academic/educational project for learning and demonstrating fundamental concepts of Digital Image Processing and Computer Vision.
+  <tr>
+    <td><b>Institution</b></td>
+    <td>GTTC Belagavi</td>
+  </tr>
 
-It can be used for:
+  <tr>
+    <td><b>Academic Year</b></td>
+    <td>2026</td>
+  </tr>
+</table>
 
-Image Processing Laboratory
-Python Projects
-OpenCV Learning
-Computer Vision Basics
-Diploma Project Demonstration
-Academic Viva and Presentation
-🔮 Future Enhancements
+<hr>
 
-The project can be extended with additional features such as:
+<h2>📜 Conclusion</h2>
 
-✂️ Image Cropping
-🔄 Image Rotation
-↔️ Image Flipping
-📐 Image Resizing
-🔍 Image Zoom
-🖌️ Drawing Tools
-🧹 Advanced Noise Removal
-📊 Histogram Visualization
-🖼️ Side-by-Side Image Comparison
-↩️ Processing History
-🌐 Online Deployment
-📱 Improved mobile support
-🔐 File Handling
+<p>
+  The <b>ImagePro Studio</b> project was successfully developed to provide
+  a simple and interactive platform for performing fundamental image
+  processing operations.
+</p>
 
-Uploaded and processed images are stored temporarily in:
+<p>
+  The application demonstrates the practical use of <b>Python, Flask,
+  OpenCV, NumPy, HTML, CSS and JavaScript</b> in developing a web-based
+  image processing system.
+</p>
 
-uploads/
-outputs/
+<p>
+  Through this project, the team gained practical knowledge of digital
+  image processing, web application development and OpenCV programming.
+  The project successfully achieves its objectives and serves as an
+  effective <b>Final Year Project</b> for demonstrating fundamental
+  image processing concepts and their practical implementation.
+</p>
 
-These folders are intended for application-generated files.
+<hr>
 
-For GitHub repositories, generated image files should generally not be committed to the repository.
+<h2>📌 Keywords</h2>
 
-📋 Requirements
+<p>
+  Image Processing, OpenCV, Python, Flask, NumPy, Computer Vision,
+  Grayscale, Thresholding, Histogram Equalization, Image Filtering,
+  Sobel, Canny, Laplacian, Web Application
+</p>
 
-Recommended environment:
+<hr>
 
-Python 3.x
-Flask
-OpenCV
-NumPy
-Modern Web Browser
+<p align="center">
+  <b>🖼️ ImagePro Studio</b>
+</p>
 
-Install dependencies using:
+<p align="center">
+  Image Processing Tools using OpenCV
+</p>
 
-pip install -r requirements.txt
-👨‍💻 Author
-Atharv Shetty
-
-Diploma in Artificial Intelligence and Machine Learning
-
-GitHub:
-
-Atharv-Ai09 on GitHub
-
-⭐ Project Repository
-
-Image Processing Tools – GitHub Repository
-
-If you find this project useful for learning, consider giving the repository a ⭐.
-
-📜 License
-
-This project is created for educational and academic purposes.
-
-You are free to study and modify the source code for learning purposes.
-
-❤️ Acknowledgement
-
-This project was developed to demonstrate the practical implementation of fundamental Image Processing techniques using Python and OpenCV through a web-based interface.
-
-<p align="center"> <b>🖼️ ImagePro Studio</b><br> Image Processing Made Simple </p> ```
+<p align="center">
+  <b>Final Year Project – GTTC Belagavi</b>
+</p>
